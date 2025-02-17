@@ -22,8 +22,8 @@
      const categories = "about us|procedures|treatments|face|skin|body|facial fillers";
    	const imageButtons = [];
      const imageButtonsDisabled = [
-       {url:"/contact",title:"Contact Us",subtitle:"Make an Appointment", caption:”Contact Us - Make an Appointment”},
-       {url:"/contact",title:"Contact Us Today",subtitle:"For your Consultation", caption:”Book your Consultation Today”, exclusive:”/coolsculpting”, position:1},
+       {url:"/contact",title:"Contact Us",subtitle:"Make an Appointment", caption:"Contact Us - Make an Appointment"},
+       {url:"/contact",title:"Contact Us Today",subtitle:"For your Consultation", caption:"Book your Consultation Today", exclusive:"/coolsculpting", position:1},
        {url:"/procedures",title:"Procedures",subtitle:"CPW Vein & Aesthetic Center"},
        {url:"/treatments",title:"Treatments",subtitle:"CPW Vein & Aesthetic Center"},
        {url:"/about-cpw",title:"About Us",subtitle:"CPW Vein & Aesthetic Center"},
@@ -76,7 +76,7 @@
             });
        }
        // Move Medium Image Button title to the bottom of the image if button size exceeds ${medImgBtnFlipTextWidth} px
-       // Inserting the @container logic into CSS directly causes a crass of “less” - hence jQuery to the rescue
+       // Inserting the @container logic into CSS directly causes a crass of “less" - hence jQuery to the rescue
        $(`<style>div:has(>div.sqs-block-button > div.sqs-block-content>div[data-button-size='medium']) > div > div > figure:has(>figcaption) {container-type:inline-size;};</style>`).appendTo('head');
        $(`<style>div:has(>div.sqs-block-button > div.sqs-block-content >div[data-button-size='medium']) > div > div > figure>figcaption { @container (min-width:${medImgBtnFlipTextWidth}px) { align-items: flex-end !important; margin-bottom: 15px; }}</style>`).appendTo('head');
        // Accordingly, when button are wider than ${medImgBtnFlipTextWidth} px, flip title and subtitle so title is on the bottom of the button
