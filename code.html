@@ -18,7 +18,7 @@
   ];
   const imageButtonsDisabled = [
     { url: "/contact", title: "Contact Us", subtitle: "Make an Appointment", caption: "Contact Us - Make an Appointment" },
-    { url: "/contact", title: "Contact Us Today", subtitle: "For your Consultation", caption: "Book your Consultation Today", exclusive: "/coolsculpting", position: 1 },
+    { url: "/contact", title: "Contact Us Today", subtitle: "For your Consultation", caption: "Book your Consultation Today", exclusive: "/coolsculpting", occurrence: 1 },
     { url: "/procedures", title: "Procedures", subtitle: "CPW Vein & Aesthetic Center" },
     { url: "/treatments", title: "Treatments", subtitle: "CPW Vein & Aesthetic Center" },
     { url: "/about-cpw", title: "About Us", subtitle: "CPW Vein & Aesthetic Center" },
@@ -181,41 +181,41 @@
       let eles = $("div.intrinsic:has(>a[href='" + button.url + "'],>a[href^='" + button.url + "?']) + figcaption > div > div.image-title-wrapper > div > p");
       if (eles.length == 0)
         continue;
-      if (button.position == undefined) {
+      if (buttono.occurrence == undefined) {
         eles.html(button.title);
       } else {
-        $(eles[button.position - 1]).html(button.title);
+        $(eles[buttono.occurrence - 1]).html(button.title);
       }
       writeImageButtonSubtitle(button);
       writeImageButtonCaption(button);
     }
     function writeImageButtonCaption(button) {
       if (button.caption == undefined) return;
-      if (button.position == undefined) {
+      if (buttono.occurrence == undefined) {
         $("div:has(>div>figure>div.intrinsic>a[href='" + button.url + "'],> a[href^='" + button.url + "?'])  + div>div>div>a").html(button.caption);
       } else {
-        $($("div:has(>div>figure>div.intrinsic>a[href='" + button.url + "'],> a[href^='" + button.url + "?'])  + div>div>div>a")[button.position - 1]).html(button.caption);
+        $($("div:has(>div>figure>div.intrinsic>a[href='" + button.url + "'],> a[href^='" + button.url + "?'])  + div>div>div>a")[buttono.occurrence - 1]).html(button.caption);
       }
     }
     function writeImageButtonSubtitle(button) {
-      let ele = (button.position == undefined)
+      let ele = (buttono.occurrence == undefined)
         ? $("div.intrinsic:has(>a[href='" + button.url + "'],>a[href^='" + button.url + "?']) + figcaption > div > div.image-subtitle-wrapper")
-        : $($("div.intrinsic:has(>a[href='" + button.url + "'],>a[href^='" + button.url + "?']) + figcaption > div > div.image-subtitle-wrapper")[button.position-1])
+        : $($("div.intrinsic:has(>a[href='" + button.url + "'],>a[href^='" + button.url + "?']) + figcaption > div > div.image-subtitle-wrapper")[buttono.occurrence-1])
         ;
       if (button.subtitle == undefined) {
-        (button.position == undefined)
+        (buttono.occurrence == undefined)
           ? $("div.intrinsic:has(>a[href='" + button.url + "'], >a[href^='" + button.url + "?']) + figcaption > div > div.image-subtitle-wrapper").remove()
-          : $($("div.intrinsic:has(>a[href='" + button.url + "'], >a[href^='" + button.url + "?']) + figcaption > div > div.image-subtitle-wrapper")[button.position - 1]).remove();
+          : $($("div.intrinsic:has(>a[href='" + button.url + "'], >a[href^='" + button.url + "?']) + figcaption > div > div.image-subtitle-wrapper")[buttono.occurrence - 1]).remove();
         return;
       }
       if (ele.length == 0) {
-        (button.position == undefined)
+        (buttono.occurrence == undefined)
           ? $("div.intrinsic:has(>a[href='" + button.url + "'], >a[href^='" + button.url + "?']) + figcaption > div").append("<div class='image-subtitle-wrapper'><div class='image-subtitle sqs-dynamic-text' data-animation-override='' data-width-percentage='25.3' style='font-size: max(0.75rem, 25.3%);'><p class='min-font-set' style='white-space:pre-wrap;'>" + button.subtitle + "</p></div></div>")
-          : $($("div.intrinsic:has(>a[href='" + button.url + "'], >a[href^='" + button.url + "?']) + figcaption > div")[button.position - 1]).append("<div class='image-subtitle-wrapper'><div class='image-subtitle sqs-dynamic-text' data-animation-override='' data-width-percentage='25.3' style='font-size: max(0.75rem, 25.3%);'><p class='min-font-set' style='white-space:pre-wrap;'>" + button.subtitle + "</p></div></div>");
+          : $($("div.intrinsic:has(>a[href='" + button.url + "'], >a[href^='" + button.url + "?']) + figcaption > div")[buttono.occurrence - 1]).append("<div class='image-subtitle-wrapper'><div class='image-subtitle sqs-dynamic-text' data-animation-override='' data-width-percentage='25.3' style='font-size: max(0.75rem, 25.3%);'><p class='min-font-set' style='white-space:pre-wrap;'>" + button.subtitle + "</p></div></div>");
       } else {
-        (button.position == undefined)
+        (buttono.occurrence == undefined)
           ? $("div.intrinsic:has(>a[href='" + button.url + "'],>a[href^='" + button.url + "?']) + figcaption > div > div.image-subtitle-wrapper > div > p").html(button.subtitle)
-          : $($("div.intrinsic:has(>a[href='" + button.url + "'],>a[href^='" + button.url + "?']) + figcaption > div > div.image-subtitle-wrapper > div > p")[button.position - 1]).html(button.subtitle);
+          : $($("div.intrinsic:has(>a[href='" + button.url + "'],>a[href^='" + button.url + "?']) + figcaption > div > div.image-subtitle-wrapper > div > p")[buttono.occurrence - 1]).html(button.subtitle);
       }
     }
   }
