@@ -32,8 +32,8 @@ figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.imag
   --button-medium-max-width: 360px;
   --button-large-max-width: 450px;
   --medium-button-transition-delay: .05s;
-  --medium-button-transition-duration: .25s;
-  --medium-button-transition-scale: 1.1;
+  --medium-button-transition-duration: .2s;
+  --medium-button-transition-scale: 1.08;
 
   --color-magenta: #c90852;
   --color-pink: #ff8bb7;
@@ -728,7 +728,7 @@ div:has(>div>figure>div>a>div>div.image-overlay)+div>div>div[data-button-size="m
   transition: all .2 ease-out;
 }
 
-div:has(> div.sqs-block-button > div.sqs-block-content > div.sqs-block-button-container[data-button-size="medium"])>div.sqs-block-image>div.sqs-block-content>figure.sqs-block-image-figure>div.intrinsic>a>div.sqs-image-shape-container-element>div.image-overlay,
+/*div:has(> div.sqs-block-button > div.sqs-block-content > div.sqs-block-button-container[data-button-size="medium"])>div.sqs-block-image>div.sqs-block-content>figure.sqs-block-image-figure>div.intrinsic>a>div.sqs-image-shape-container-element>div.image-overlay,*/
 div:has(> div.sqs-block-button > div.sqs-block-content > div.sqs-block-button-container[data-button-size="medium"])>div.sqs-block-image>div.sqs-block-content>figure.sqs-block-image-figure>div.intrinsic>a>div.sqs-image-shape-container-element>div.image-overlay {
   transition: all .5s ease-out;
   transition-delay: var(--medium-button-transition-delay);
@@ -755,20 +755,20 @@ div.sqs-block-image:has(+div.sqs-block-button a)>div:hover>figure>div>a>div>img 
 /* TODO Bug - should crash when two buttons are in one containing div*/
 div:has(>div>div>div>a.sqs-block-button-element--medium.sqs-button-element--primary.sqs-block-button-element)>div.sqs-block-image:first-child>div>figure>figcaption,
 div:has(>a>div>div.image-overlay)+figcaption {
-  transition: filter .5s ease;
+  transition: all .5s ease-out;
   transition-delay: var(--medium-button-transition-delay);
 }
 
 div:has(>div>div>div>a.sqs-block-button-element--medium.sqs-button-element--primary.sqs-block-button-element:hover)>div.sqs-block-image:first-child>div>figure>figcaption,
 div:has(>a>div>div.image-overlay:hover)+figcaption .image-subtitle-wrapper {
-  filter: drop-shadow(.5px .5px 0px black);
-  -webkit-text-stroke: .8px white;
+  /*filter: drop-shadow(.5px .5px 0px black);
+  -webkit-text-stroke: .8px white;*/
 }
 
 div:has(>div>div>div>a.sqs-block-button-element--medium.sqs-button-element--primary.sqs-block-button-element:hover)>div.sqs-block-image:first-child>div>figure>figcaption,
 div:has(>a>div>div.image-overlay:hover)+figcaption .image-title-wrapper {
-  filter: drop-shadow(.3px .3px 0px black);
-  -webkit-text-stroke: 1.2px white;
+  /*filter: drop-shadow(.3px .3px 0px black);
+  -webkit-text-stroke: 1.2px white;*/
 }
 
 /*end animation*/
