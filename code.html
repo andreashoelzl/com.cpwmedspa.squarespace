@@ -387,7 +387,7 @@
         let titles = title.split("-:-");
         document.title = titles[0] + " " + titles[1];
         $("#page-title").html(titles[0]);
-        $("<div class='title-breadcrumb'>" + titles[1] + "</div>").insertAfter(
+        $("<div class='title-breadcrumb title-subtitle'>" + titles[1] + "</div>").insertAfter(
           $("#page-title")
         );
       }

@@ -488,6 +488,10 @@ div#page-title-wrapper {
   animation: 1s ease-out 1.8s 1 fadeInTitle forwards;
 }
 
+div.title-subtitle {
+  line-height: .9em;
+}
+
 div#title-breadcrumb>a#title-breadcrumb-link {
   padding: 0 25px;
   border-radius: var(--button-border-radius);
