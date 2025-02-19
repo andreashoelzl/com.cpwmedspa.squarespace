@@ -21,8 +21,7 @@
   const category = urlParams.has("category") ? urlParams.get("category") : "";
   const categories =
     "about us|procedures|treatments|face|skin|body|facial fillers";
-  const imageButtons = [];
-  const imageButtonsDisabled = [
+  const imageButtons = [
     {
       url: "/contact",
       title: "Contact Us",
@@ -404,8 +403,11 @@
         //$("div#content-wrapper").css("border-right", "0px");
         writeBannerTitle("Are these the", "Search Results", "you looked for?");
       }
-    }
-    createImageButtonCaptions();
+    };
+    $($("#page-body-wrapper hr")[$("hr").length - 1]).addClass("#page-body-wrapper hr-prior-footer");
+    $($(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row")[$(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row").length - 1]).addClass("div-prior-footer");
+
+    //createImageButtonCaptions();
   });
 
   // Facebook Tracking

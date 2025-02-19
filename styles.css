@@ -38,7 +38,8 @@ figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.imag
   --color-magenta: #c90852;
   --color-pink: #ff8bb7;
   --color-lightpink: #ffddea;
-  /* alternative palette: lightslategray*/
+  /* alternative palette: lightslategrey*/
+  --color-lighterslategrey: #d4d9de;
   --canvas-background-color: #FFFCF7;
   /*#FFF8ED; #fffdfa;*/
 }
@@ -108,7 +109,7 @@ h6 {
 
 h1:not(div#page-body-header>div:first-child h1:first-child):not(#page-title):not(#page-title):not(div.sqs-lightbox-meta>h1) {
   font-style: italic;
-  background: linear-gradient(-25deg, #d4d9de, transparent);
+  background: linear-gradient(-25deg, var(--color-lighterslategrey), transparent);
   /*var(--color-lightpink)*/
   /* filter: drop-shadow(2px 2px 0px var(--color-magenta)); */
   text-shadow: 2px 2px 0px white;
@@ -564,6 +565,22 @@ div#page-body-header {
   margin-bottom: 15px;
 }
 
+hr.hr-prior-footer {
+  height: 1px;
+  margin: 30px 0 0;
+}
+
+div.div-prior-footer {
+  background-image: linear-gradient(var(--color-lighterslategrey), transparent, var(--color-lighterslategrey));
+  border-radius: var(--button-border-radius);
+  border: 1px solid var(--color-pink);
+}
+
+.div-prior-footer a.sqs-block-button-element--medium,
+.div-prior-footer div.image-overlay {
+  border: 2px solid white;
+}
+
 /** Image without a link **/
 /* disabled due to “in the press” and “coolsculpting”*/
 /*
@@ -725,7 +742,7 @@ div:has(>div>figure>div>a>div>div.image-overlay:hover)+div>div>div[data-button-s
 }
 
 div:has(>div>figure>div>a>div>div.image-overlay)+div>div>div[data-button-size="medium"]>a {
-  transition: all .2 ease-out;
+  transition: all .2s ease-out;
 }
 
 /*div:has(> div.sqs-block-button > div.sqs-block-content > div.sqs-block-button-container[data-button-size="medium"])>div.sqs-block-image>div.sqs-block-content>figure.sqs-block-image-figure>div.intrinsic>a>div.sqs-image-shape-container-element>div.image-overlay,*/
