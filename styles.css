@@ -238,6 +238,10 @@ h1:not(div#page-body-header>div:first-child h1:first-child):not(#page-title):not
     margin-right: auto
   }
 
+  div.div-prior-footer {
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
 }
 
 /** background navigation sub menu on mobile **/
