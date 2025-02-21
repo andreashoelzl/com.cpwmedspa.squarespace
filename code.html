@@ -311,6 +311,14 @@
         characterData: false,
       });
     }
+    $(window).resize(function(){
+      if (window.innerWidth > 1800) {
+        let imgHalf = $("div#page-thumb>img").height() / 2;
+        let fromTop = parseFloat($("div#page-thumb>img").css("top"),10);
+        let result =  fromTop * -1 + 250;
+        $("div#page-thumb>img").css("mask-image","radial-gradient(circle at 50% " + result + "px, #000 875px, transparent 900px)");
+      }
+    });
     // Move Medium Image Button title to the bottom of the image if button size exceeds ${medImgBtnFlipTextWidth} px
     // Inserting the @container logic into CSS directly causes a crass of “less" - hence jQuery to the rescue
     $(

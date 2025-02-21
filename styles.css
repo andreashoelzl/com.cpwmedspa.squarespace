@@ -27,7 +27,7 @@ figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.imag
 
 /* General *******************************************************************************/
 :root {
-  --button-border-radius: 30px;
+  --button-border-radius: 5px;
   --button-small-max-width: 280px;
   --button-medium-max-width: 360px;
   --button-large-max-width: 450px;
@@ -423,6 +423,17 @@ div:has(>div>div.button-submenu)~div a {
   }
 }
 
+@media (min-width: 1800px) {
+  div#banner-area-wrapper {
+    background: repeating-radial-gradient(circle at center, var(--color-magenta), black 100px);
+  }
+
+  div#page-thumb>img {
+    -webkit-mask-image: radial-gradient(circle at center, #000 875px, transparent 900px);
+    mask-image: radial-gradient(circle at center, #000 875px, transparent 900px);
+  }
+}
+
 /* Desktop  *******************************************************************************/
 .horizontal-navigation-bar {
   margin: 0 1em;
@@ -528,7 +539,9 @@ div#banner-wrapper {
 }
 
 div#banner-area>div#page-thumb {
-  max-width: 1920px;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div#banner-area {
@@ -539,12 +552,6 @@ div#banner-area {
 /* Class banner-wrapper? does that exist? */
 .banner-wrapper {
   padding-bottom: 0px;
-}
-
-div#page-thumb {
-  max-width: 2250px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Body  *******************************************************************************/
@@ -702,6 +709,16 @@ div.sqs-mobile-info-bar {
 }
 
 /* Buttons  *******************************************************************************/
+
+div[data-button-size="medium"] {
+  display: flex;
+}
+
+div[data-button-size="medium"]>a.sqs-block-button-element--medium {
+  flex-grow: 1;
+  align-content: center;
+}
+
 /** Image Buttons - Don’t forget to duplicate settings for Contact Button in Footer**/
 /* TODO [possible issues coming from]- replaced div.sqs-block-button-container[data-button-size="medium"] with div.sqs-block-button-container and div.sqs-block-content >div[data-button-size="medium"] with div.sqs-block-content >div */
 div:has(> div.sqs-block-button > div.sqs-block-content > div.sqs-block-button-container)>div.sqs-block-image>div.sqs-block-content>figure.sqs-block-image-figure>div.intrinsic>a>div.sqs-image-shape-container-element>div.image-overlay {
@@ -844,8 +861,9 @@ button[type="submit"]:hover {
 
 /** Begin Rounded Buttons **/
 .sqs-block-button .sqs-block-button-element--medium {
-  padding: 21px 15px;
-  line-height: 1.3em;
+  padding: 15px 15px;
+  line-height: 1.2em;
+  min-height: 2.4em;
 }
 
 div.sqs-add-to-cart-button {
@@ -1041,11 +1059,12 @@ div:has(>div > .anchor) {
   font-size: min(1.55em, 38px);
 }
 
+/* medium button */
 .sqs-block-button .sqs-block-button-element--medium {
-  font-size: clamp(.8rem, 1.5vw, 1rem);
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
 }
 
-/* Sites  *******************************************************************************/
+/* Pages  *******************************************************************************/
 /** Default - Search **/
 body:not(.has-page-thumbnail) #page-header-wrapper {
   background-position: 50% 35%;
@@ -1097,6 +1116,10 @@ div:has(>div>div.hide-div) {
   display: none;
   z-index: -10000;
 }
+
+/** Under Eye Dark Circles & Tear Troughts - Treatment and Before & AFter Page **/
+
+/* Code inside the two pages */
 
 /** Contact **/
 div:has(> div > div.office-location)+div div.image-title p {
