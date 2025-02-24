@@ -316,7 +316,7 @@
         let imgHalf = $("div#page-thumb>img").height() / 2;
         let fromTop = parseFloat($("div#page-thumb>img").css("top"),10);
         let result =  fromTop * -1 + 250;
-        $("div#page-thumb>img").css("mask-image","radial-gradient(circle at 50% " + result + "px, #000 875px, transparent 900px)");
+        //$("div#page-thumb>img").css("mask-image","radial-gradient(circle at 50% " + result + "px, #000 875px, transparent 900px)");
         if (window.location.pathname == '/search') {
           $("div#page-thumb>img").css("mask-image", "unset");
           $("div#banner-area-wrapper").css("background", "unset !important");

@@ -425,12 +425,13 @@ div:has(>div>div.button-submenu)~div a {
 
 @media (min-width: 1800px) {
   div#banner-area-wrapper {
-    background: repeating-radial-gradient(circle at center, var(--color-magenta), black 100px);
+    /*background: repeating-radial-gradient(circle at center, var(--color-magenta), black 100px);*/
+    background: radial-gradient(circle at center,black 825px, transparent)
   }
 
   div#page-thumb>img {
-    -webkit-mask-image: radial-gradient(circle at center, #000 875px, transparent 900px);
-    mask-image: radial-gradient(circle at center, #000 875px, transparent 900px);
+    /*-webkit-mask-image: radial-gradient(circle at center, #000 875px, transparent 900px);
+    mask-image: radial-gradient(circle at center, #000 875px, transparent 900px);*/
   }
 }
 
