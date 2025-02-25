@@ -116,6 +116,7 @@ h1:not(div#page-body-header>div:first-child h1:first-child):not(#page-title):not
   border-radius: 5px;
   padding-left: 15px;
   border-bottom: 1px solid silver;
+  /*background-image: url(https://images.squarespace-cdn.com/content/v1/5c8010f7fd6793302f0be41b/dec9a8a6-8321-4954-bbf6-abc5507e6ba3/stripe_slategrey.png);*/
 }
 
 #page-body,
@@ -426,7 +427,7 @@ div:has(>div>div.button-submenu)~div a {
 @media (min-width: 1800px) {
   div#banner-area-wrapper {
     /*background: repeating-radial-gradient(circle at center, var(--color-magenta), black 100px);*/
-    background: radial-gradient(circle at center,black 825px, transparent)
+    background: radial-gradient(circle at center, black 825px, transparent)
   }
 
   div#page-thumb>img {
@@ -682,10 +683,10 @@ div:has(>div>div>div.flex-column) {
   border-top: 1px solid var(--color-magenta);
   background-image: url(https://images.squarespace-cdn.com/content/5c8010f7fd6793302f0be41b/c4bba703-bc4d-4407-8c37-b8ce82f2e6d1/icon-transparent310x310.png);
   background-repeat: no-repeat;
-  background-size: 100px;
+  background-size: clamp(120px, 20vw, 180px);
   background-position: left bottom;
-  background-position-x: -20px;
-  /*background: linear-gradient( var(--canvas-background-color) 50%, #feedf3 95%, #f84c8e 100%);*/
+  background-color: #fff;
+  background-position-x: clamp(-35px, -4vw, -25px);
 }
 
 #footer-mailto {
