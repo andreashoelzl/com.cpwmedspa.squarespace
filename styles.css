@@ -13,12 +13,14 @@ figcaption.image-card-wrapper>div.image-card.sqs-dynamic-text-container {
   width: 90%;
 }
 
+#page-footer-wrapper figcaption.image-card-wrapper>div.image-card>div.image-title-wrapper>div.image-title>p,
 figcaption.image-card-wrapper>div.image-card>div.image-title-wrapper>div.image-title>p {
   text-shadow: 2px 2px 1px black;
   font-size: min(1.55em, 38px);
   font-weight: 200;
 }
 
+#page-footer-wrapper figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.image-subtitle>p,
 figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.image-subtitle>p {
   text-shadow: 1px 1px 1px black;
   font-size: min(1.6em, 20px) !important;
@@ -466,12 +468,14 @@ div.horizontal-navigation-bar nav.main-nav .folder .subnav ul {
 
   60% {
     opacity: 0;
+    filter:blur(5px);
     /*was .99*/
     /*transform: translateX(-100%);*/
   }
 
   100% {
     opacity: 1;
+    filter: unset;
     /*transform: translateX(0);*/
   }
 }
@@ -665,6 +669,7 @@ div:has(>div>div>div.flex-column) {
   position: sticky;
 }
 
+/*
 #page-footer-wrapper figcaption.image-card-wrapper>div.image-card>div.image-title-wrapper>div.image-title>p {
   text-shadow: 2px 2px 1px black !important;
   font-size: min(1.55em, 38px) !important;
@@ -678,6 +683,7 @@ div:has(>div>div>div.flex-column) {
   font-weight: 400 !important;
   transition: all .3 .15 ease-out;
 }
+  */
 
 #page-footer-wrapper {
   border-top: 1px solid var(--color-magenta);
@@ -721,7 +727,7 @@ div[data-button-size="medium"]>a.sqs-block-button-element--medium {
   align-content: center;
 }
 
-/** Image Buttons - Don’t forget to duplicate settings for Contact Button in Footer**/
+/****** Image Buttons ******/
 /* TODO [possible issues coming from]- replaced div.sqs-block-button-container[data-button-size="medium"] with div.sqs-block-button-container and div.sqs-block-content >div[data-button-size="medium"] with div.sqs-block-content >div */
 div:has(> div.sqs-block-button > div.sqs-block-content > div.sqs-block-button-container)>div.sqs-block-image>div.sqs-block-content>figure.sqs-block-image-figure>div.intrinsic>a>div.sqs-image-shape-container-element>div.image-overlay {
   background: rgba(0, 0, 0, .1);
@@ -1121,17 +1127,9 @@ div:has(>div>div.hide-div) {
 
 /** Under Eye Dark Circles & Tear Troughts - Treatment and Before & AFter Page **/
 
-/* Code inside the two pages */
+/* Code is inside the two pages' code components*/
 
-/** Contact **/
-div:has(> div > div.office-location)+div div.image-title p {
-  font-size: clamp(1.1rem, 9vw, 6.0rem) !important;
-  font-weight: 600 !important;
-}
 
-div:has(> div > div.office-location)+div div.image-subtitle p {
-  font-size: clamp(1.1rem, 3vw, 3.0rem) !important;
-}
 
 /** Store **/
 select[data-variant-option-name="Value"] {
