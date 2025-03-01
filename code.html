@@ -417,7 +417,12 @@
       }
     };
     $($("#page-body-wrapper hr")[$("hr").length - 1]).addClass("#page-body-wrapper hr-prior-footer");
-    $($(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row")[$(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row").length - 1]).addClass("div-prior-footer");
+    if ($("div[div-prior-footer]").length == 0)
+    {
+      $($(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row")[$(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row").length - 1]).addClass("div-prior-footer");
+    } else {
+      $("div:has(>div>div[div-prior-footer])+div").addClass("div-prior-footer");
+    }
 
     //createImageButtonCaptions();
   });
