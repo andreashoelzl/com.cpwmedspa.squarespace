@@ -109,7 +109,7 @@ h6 {
   /*filter: drop-shadow(2px 2px  var(--color-lightpink));*/
 }
 
-h1:not(div#page-body-header>div:first-child h1:first-child):not(#page-title):not(#page-title):not(div.sqs-lightbox-meta>h1) {
+h1:not(div#page-body-header>div:first-child > div > div > div:first-child > div> div > h1:first-child):not(h1#content-subtitle):not(#page-title):not(#page-title):not(div.sqs-lightbox-meta>h1) {
   font-style: italic;
   background: linear-gradient(-25deg, var(--color-lighterslategrey), transparent);
   /*var(--color-lightpink)*/
@@ -468,7 +468,7 @@ div.horizontal-navigation-bar nav.main-nav .folder .subnav ul {
 
   60% {
     opacity: 0;
-    filter:blur(5px);
+    filter: blur(5px);
     /*was .99*/
     /*transform: translateX(-100%);*/
   }
@@ -562,7 +562,8 @@ div#banner-area {
 
 /* Body  *******************************************************************************/
 /** Specialized first H1 headline on a page right below hero image **/
-#content-wrapper #content div#page-body-header>div:first-child h1:first-child {
+#content-wrapper #content div#page-body-header>div:first-child>div>div>div:first-child>div>div>h1:first-child,
+h1#content-subtitle {
   font-weight: 100 !important;
   text-align: center;
   padding-top: 0px;
