@@ -241,6 +241,13 @@ h1:not(div#page-body-header>div:first-child > div > div > div:first-child > div>
     margin-right: auto
   }
 
+  div.sqs-block-image:has(+ div.sqs-block-button > div.sqs-block-content > div.sqs-block-button-container[data-button-size="small"]):has(>div.sqs-block-content > figure.design-layout-poster > div.intrinsic > a),
+  div.sqs-block-button:has(> div.sqs-block-content > div.sqs-block-button-container[data-button-size="small"]) {
+    max-width: var(--button-small-max-width);
+    margin-left: auto;
+    margin-right: auto
+  }
+
   div.div-prior-footer {
     padding-top: 17px;
     padding-bottom: 17px;
@@ -628,6 +635,10 @@ div:has(>div>div[sqs-hidden]) {
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+div:has(>div>div[sqs-hidden-next])+div {
+  display: none;
 }
 
 div:has(>div>div.flex-button)+div>div:has(figure) {
@@ -1097,6 +1108,12 @@ div.sqs-search-container-item>div.sqs-content>div.sqs-title {
 }
 
 /** Homepage **/
+
+div:has(>div>div>div>div.home-mission-statement) {
+  display: flex;
+  align-items: center;
+}
+
 .home-mission-statement {
   text-align: center;
   padding: 0 20px;
