@@ -1116,6 +1116,11 @@ div:has(>div>div.hide-div) {
   z-index: -10000;
 }
 
+/** Contact **/
+figure:not(:has(a)) figcaption.image-card-wrapper p {
+  font-size: inherit !important;
+}
+
 /** Under Eye Dark Circles & Tear Troughts - Treatment and Before & AFter Page **/
 
 /* Code is inside the two pages' code components*/
