@@ -9,23 +9,6 @@ div:has(>div.sqs-block-button > div.sqs-block-content >div[data-button-size="med
   visibility: visible;
 }
 
-figcaption.image-card-wrapper>div.image-card.sqs-dynamic-text-container {
-  width: 90%;
-}
-
-#page-footer-wrapper figcaption.image-card-wrapper>div.image-card>div.image-title-wrapper>div.image-title>p,
-figcaption.image-card-wrapper>div.image-card>div.image-title-wrapper>div.image-title>p {
-  text-shadow: 2px 2px 1px black;
-  font-size: min(1.55em, 38px);
-  font-weight: 200;
-}
-
-#page-footer-wrapper figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.image-subtitle>p,
-figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.image-subtitle>p {
-  text-shadow: 1px 1px 1px black;
-  font-size: min(1.6em, 20px) !important;
-  font-weight: 400;
-}
 
 /* General *******************************************************************************/
 :root {
@@ -681,21 +664,6 @@ div:has(>div>div>div.flex-column) {
   position: sticky;
 }
 
-/*
-#page-footer-wrapper figcaption.image-card-wrapper>div.image-card>div.image-title-wrapper>div.image-title>p {
-  text-shadow: 2px 2px 1px black !important;
-  font-size: min(1.55em, 38px) !important;
-  font-weight: 200 !important;
-  transition: all .3s .15s ease-out;
-}
-
-#page-footer-wrapper figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.image-subtitle>p {
-  text-shadow: 1px 1px 1px black !important;
-  font-size: min(1.6em, 20px) !important;
-  font-weight: 400 !important;
-  transition: all .3 .15 ease-out;
-}
-  */
 
 #page-footer-wrapper {
   border-top: 1px solid var(--color-magenta);
@@ -745,7 +713,7 @@ div:has(> div.sqs-block-button > div.sqs-block-content > div.sqs-block-button-co
   background: rgba(0, 0, 0, .1);
 }
 
-/* TODO another duplicate? see “test” section on top of page */
+
 div:has(>div.sqs-block-button > div.sqs-block-content >div[data-button-size="medium"])>div>div>figure>figcaption {
   visibility: visible;
 }
@@ -754,16 +722,20 @@ figcaption.image-card-wrapper>div.image-card.sqs-dynamic-text-container {
   width: 90%;
 }
 
+#page-footer-wrapper figcaption.image-card-wrapper>div.image-card>div.image-title-wrapper>div.image-title>p,
 figcaption.image-card-wrapper>div.image-card>div.image-title-wrapper>div.image-title>p {
   text-shadow: 2px 2px 1px black;
   font-size: min(1.55em, 38px);
   font-weight: 200;
+  /*transition: all .3s .15s ease-out;*/
 }
 
+#page-footer-wrapper figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.image-subtitle>p,
 figcaption.image-card-wrapper>div.image-card>div.image-subtitle-wrapper div.image-subtitle>p {
   text-shadow: 1px 1px 1px black;
-  font-size: min(1.6em, 20px);
+  font-size: min(1.6em, 20px) !important;
   font-weight: 400;
+  /*transition: all .3s .15s ease-out;*/
 }
 
 /** Button with Image animations **/
