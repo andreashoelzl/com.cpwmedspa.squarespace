@@ -425,6 +425,8 @@ div:has(>div>div.button-submenu)~div a {
   div#page-thumb>img {
     /*-webkit-mask-image: radial-gradient(circle at center, #000 875px, transparent 900px);
     mask-image: radial-gradient(circle at center, #000 875px, transparent 900px);*/
+    box-sizing: border-box;
+    border: 1px solid white;
   }
 }
 
@@ -439,7 +441,7 @@ div#navigation-top>div {
 }
 
 div.horizontal-navigation-bar nav.main-nav .folder .subnav ul {
-  box-shadow: 3px 3px 6px silver;
+  box-shadow: 2px 6px 6px rgba(0,0,0,.5)
 }
 
 /* Header, Hero, Title, Banner  *******************************************************************************/
