@@ -815,7 +815,8 @@ div.sqs-block-image:has(+div.sqs-block-button):has(a) {
 
 button.sqs-block-image-button.lightbox,
 div.margin-wrapper>a[data-lightbox-theme]>img.thumb-image.loaded {
-  /*border: 1px solid silver;*/
+  box-sizing: border-box;
+  border: 1px solid silver;
   border-radius: var(--button-border-radius);
   overflow: hidden;
   margin: auto;
