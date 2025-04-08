@@ -1,3 +1,17 @@
+<!-- Google Tag Manager -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-TDKJWQFM");
+</script>
+<!-- End Google Tag Manager -->
 <!-- Start of HubSpot Embed Code -->
 <script
   type="text/javascript"
@@ -96,9 +110,9 @@
       title: "About Kelita",
       subtitle: "Director of Operations",
     },
-    { 
-      url: "/promotions", 
-      title: "Promotions", 
+    {
+      url: "/promotions",
+      title: "Promotions",
       subtitle: "For you",
     },
     {
@@ -179,20 +193,14 @@
       title: "Facial Fillers",
       subtitle: "Juvéderm",
       caption: "Facial Fillers",
-      exclude: [
-        "/before-after-botox",
-        "/body-aging-hands",
-      ],
-    },    
+      exclude: ["/before-after-botox", "/body-aging-hands"],
+    },
     {
       url: "/facial-fillers",
       title: "Fillers",
       subtitle: "Juvéderm",
       caption: "Fillers",
-      exclusive: [
-      "/before-after-botox",
-      "/body-aging-hands",
-      ],
+      exclusive: ["/before-after-botox", "/body-aging-hands"],
     },
     {
       url: "/face-lip-lines-and-thinning-lips",
@@ -209,7 +217,7 @@
       url: "/face-about-facial-volume-losse",
       title: "Facial Volume Losse",
       subtitle: "Learn more about it",
-    },    
+    },
     {
       url: "/face-gummy-smile",
       title: "Gummy Smile",
@@ -246,7 +254,7 @@
       url: "/facial-fillers-juvederm-volbella-xc-restylane-silk",
       title: "Volbella XC",
       subtitle: "Juvéderm",
-      caption: "Juvéderm Volbella"
+      caption: "Juvéderm Volbella",
     },
     {
       url: "/facial-fillers-juvederm-volux-xc-radiesse",
@@ -311,13 +319,13 @@
         characterData: false,
       });
     }
-    $(window).resize(function(){
+    $(window).resize(function () {
       if (window.innerWidth > 1800) {
         let imgHalf = $("div#page-thumb>img").height() / 2;
-        let fromTop = parseFloat($("div#page-thumb>img").css("top"),10);
-        let result =  fromTop * -1 + 250;
+        let fromTop = parseFloat($("div#page-thumb>img").css("top"), 10);
+        let result = fromTop * -1 + 250;
         //$("div#page-thumb>img").css("mask-image","radial-gradient(circle at 50% " + result + "px, #000 875px, transparent 900px)");
-        if (window.location.pathname == '/search') {
+        if (window.location.pathname == "/search") {
           $("div#page-thumb>img").css("mask-image", "unset");
           $("div#banner-area-wrapper").css("background", "unset !important");
         }
@@ -399,9 +407,9 @@
         let titles = title.split("-:-");
         document.title = titles[0] + " " + titles[1];
         $("#page-title").html(titles[0]);
-        $("<div class='title-breadcrumb title-subtitle'>" + titles[1] + "</div>").insertAfter(
-          $("#page-title")
-        );
+        $(
+          "<div class='title-breadcrumb title-subtitle'>" + titles[1] + "</div>"
+        ).insertAfter($("#page-title"));
       }
       document.title = document.title
         .replace(/&amp;/g, "&")
@@ -415,11 +423,17 @@
         //$("div#content-wrapper").css("border-right", "0px");
         writeBannerTitle("Are these the", "Search Results", "you looked for?");
       }
-    };
-    $($("#page-body-wrapper hr")[$("hr").length - 1]).addClass("#page-body-wrapper hr-prior-footer");
-    if ($("div[div-prior-footer]").length == 0)
-    {
-      $($(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row")[$(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row").length - 1]).addClass("div-prior-footer");
+    }
+    $($("#page-body-wrapper hr")[$("hr").length - 1]).addClass(
+      "#page-body-wrapper hr-prior-footer"
+    );
+    if ($("div[div-prior-footer]").length == 0) {
+      $(
+        $(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row")[
+          $(".main-content .col.sqs-col-12.span-12 > div.row.sqs-row").length -
+            1
+        ]
+      ).addClass("div-prior-footer");
     } else {
       $("div:has(>div>div[div-prior-footer])+div").addClass("div-prior-footer");
     }
@@ -509,7 +523,8 @@
       writeImageButtonCaption(button);
     }
     function writeImageButtonCaption(button) {
-      button.caption = (button.caption == undefined) ? button.title : button.caption;
+      button.caption =
+        button.caption == undefined ? button.title : button.caption;
       if (button.occurrence == undefined) {
         $(
           "div:has(>div>figure>div.intrinsic>a[href='" +
