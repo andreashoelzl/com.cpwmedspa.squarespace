@@ -478,9 +478,9 @@
     let m = $("meta[name='render']")[0];
     if (m == undefined) {
       m = document.createElement("meta");
+      m.setAttribute("name", "render");
       document.head.appendChild(m);
     }
-    m.setAttribute("name", "render");
     m.setAttribute("content", state);
   }
   function writeBannerTitle(breadcrumb, title, subtitle) {
