@@ -275,6 +275,7 @@
   ];
 
   $(document).ready(function () {
+    setRenderStatus("ready");
     //console.log("jquery ready")
     $("a[href='#']")
       .filter(function () {
@@ -439,6 +440,7 @@
     }
 
     //createImageButtonCaptions();
+    setRenderStatus("completed");
   });
 
   // Facebook Tracking
@@ -472,6 +474,15 @@
     }
   });
   // Facebook Tracking End
+  function setRenderStatus(state) {
+    let m = $("meta[name='render']")[0];
+    if (m == undefined) {
+      m = document.createElement("meta");
+      document.head.appendChild(m);
+    }
+    m.setAttribute("name", "render");
+    m.setAttribute("content", state);
+  }
   function writeBannerTitle(breadcrumb, title, subtitle) {
     $("div#banner-area").append(
       "<div id='page-title-wrapper' class='js-text-shrink' data-collection-id='search-page-title' data-edit-main-image='Page Banner'><div id='title-breadcrumb'>" +
