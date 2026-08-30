@@ -1218,12 +1218,12 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
 
 /* Floating "Book Now" button  *******************************************************************************/
 /** Element is injected by header-code.js (createFloatingBookButton); links out to the Pabau
-    online-bookings page in a new tab. z-index sits below the Squarespace lightbox overlay (~9001)
-    so it stays behind gallery images. **/
+    online-bookings page in a new tab. Bottom-left on desktop, bottom-right on mobile.
+    z-index sits below the Squarespace lightbox overlay (~9001) so it stays behind gallery images. **/
 #cpw-book-now,
 #cpw-book-now:visited {
   position: fixed;
-  right: 20px;
+  left: 20px;
   bottom: 20px;
   bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   z-index: 9000;
@@ -1233,7 +1233,7 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
   padding: 13px 22px;
   border-radius: 999px;
   border: 1px solid #fff;
-  background-color: var(--color-magenta);
+  background: linear-gradient(15deg, var(--color-magenta), var(--color-pink));
   color: #fff;
   font-family: proxima-nova, "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
   font-size: 15px;
@@ -1247,19 +1247,19 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
   opacity: 0;
   transform: translateY(12px);
   animation: cpwBookNowIn .5s ease-out .9s 1 forwards;
-  transition: transform .25s ease-out, box-shadow .25s ease-out, background-color .25s ease-out;
+  transition: transform .25s ease-out, box-shadow .25s ease-out, filter .25s ease-out;
 }
 
 #cpw-book-now:hover {
-  background-color: #a80645;
   color: #fff;
+  filter: brightness(.92);
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 8px 22px rgba(0, 0, 0, .28);
 }
 
 #cpw-book-now:focus-visible {
-  background-color: #a80645;
   color: #fff;
+  filter: brightness(.92);
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 8px 22px rgba(0, 0, 0, .28);
   outline: 3px solid var(--color-lightpink);
@@ -1287,6 +1287,7 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
 
   #cpw-book-now,
   #cpw-book-now:visited {
+    left: auto;
     right: 12px;
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
     padding: 12px 18px;
