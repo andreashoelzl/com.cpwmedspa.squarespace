@@ -1220,8 +1220,7 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
 /** Element is injected by header-code.js (createFloatingBookButton); links out to the Pabau
     online-bookings page in a new tab. Bottom-left on desktop, bottom-right on mobile.
     z-index sits below the Squarespace lightbox overlay (~9001) so it stays behind gallery images. **/
-#cpw-book-now,
-#cpw-book-now:visited {
+#cpw-book-now {
   position: fixed;
   left: 20px;
   bottom: 20px;
@@ -1233,6 +1232,7 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
   padding: 16.25px 27.5px;
   border-radius: 999px;
   border: 1px solid #fff;
+  background-color: var(--color-magenta);
   background: linear-gradient(15deg, var(--color-magenta), var(--color-pink));
   color: #fff;
   font-family: proxima-nova, "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
@@ -1248,6 +1248,10 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
   transform: translateY(12px);
   animation: cpwBookNowIn .5s ease-out .9s 1 forwards;
   transition: transform .25s ease-out, box-shadow .25s ease-out, filter .25s ease-out;
+}
+
+#cpw-book-now:visited {
+  color: #fff;
 }
 
 #cpw-book-now:hover {
@@ -1285,8 +1289,7 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
 
 @media (max-width: 640px) {
 
-  #cpw-book-now,
-  #cpw-book-now:visited {
+  #cpw-book-now {
     left: auto;
     right: 12px;
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
@@ -1303,8 +1306,7 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
 
 @media (prefers-reduced-motion: reduce) {
 
-  #cpw-book-now,
-  #cpw-book-now:visited {
+  #cpw-book-now {
     opacity: 1;
     transform: none;
     animation: none;
