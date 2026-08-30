@@ -1,3 +1,4 @@
+  const cpwCurrentScript = document.currentScript;
   /** CSS media queries run on min-width/max-width ${maxMobile}px **/
   const maxMobile = 640;
   let isMobile = window.matchMedia(`(max-width: ${maxMobile}px)`);
@@ -457,11 +458,55 @@
     m.setAttribute("content", state);
   }
   /**
-   * Floating "Book Now" call-to-action, shown on every page.
+   * Floating "Book Now" call-to-action, shown on every page by default.
    * Opens the Pabau online-bookings page in a new tab.
+   * Can be toggled off via script tag query param (e.g., ?book-now=off)
+   * or overridden via page URL query param (?book-now=off / ?book-now=on).
    * Look & entrance animation live in styles.css (#cpw-book-now).
    */
+  function isFloatingBookButtonEnabled() {
+    // 1. Check page URL query params (runtime override/testing e.g. ?book-now=off or ?book-now=on)
+    const pageParams = new URLSearchParams(window.location.search);
+    const pageVal =
+      pageParams.get("book-now") ||
+      pageParams.get("bookNow") ||
+      pageParams.get("book_now") ||
+      pageParams.get("book");
+    if (pageVal) {
+      return !["off", "false", "0", "hide", "no", "disable", "disabled"].includes(
+        pageVal.toLowerCase()
+      );
+    }
+
+    // 2. Check script tag query params (e.g. <script src="...header-code.js?book-now=off">)
+    const scriptEl =
+      cpwCurrentScript ||
+      document.currentScript ||
+      document.querySelector('script[src*="header-code.js"]');
+    if (scriptEl && scriptEl.src) {
+      try {
+        const scriptUrl = new URL(scriptEl.src, window.location.href);
+        const scriptVal =
+          scriptUrl.searchParams.get("book-now") ||
+          scriptUrl.searchParams.get("bookNow") ||
+          scriptUrl.searchParams.get("book_now") ||
+          scriptUrl.searchParams.get("book");
+        if (
+          scriptVal &&
+          ["off", "false", "0", "hide", "no", "disable", "disabled"].includes(
+            scriptVal.toLowerCase()
+          )
+        ) {
+          return false;
+        }
+      } catch (e) {}
+    }
+
+    return true;
+  }
+
   function createFloatingBookButton() {
+    if (!isFloatingBookButtonEnabled()) return;
     if (document.getElementById("cpw-book-now")) return;
     const link = document.createElement("a");
     link.id = "cpw-book-now";
