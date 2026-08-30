@@ -1229,14 +1229,14 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
   z-index: 9000;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 13px 22px;
+  gap: 11.25px;
+  padding: 16.25px 27.5px;
   border-radius: 999px;
   border: 1px solid #fff;
   background: linear-gradient(15deg, var(--color-magenta), var(--color-pink));
   color: #fff;
   font-family: proxima-nova, "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
-  font-size: 15px;
+  font-size: 18.75px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: .08em;
@@ -1271,8 +1271,8 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
 }
 
 #cpw-book-now .cpw-book-now-icon {
-  width: 19px;
-  height: 19px;
+  width: 23.75px;
+  height: 23.75px;
   flex: none;
 }
 
@@ -1290,14 +1290,14 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
     left: auto;
     right: 12px;
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-    padding: 12px 18px;
-    font-size: 13px;
-    gap: 7px;
+    padding: 15px 22.5px;
+    font-size: 16.25px;
+    gap: 8.75px;
   }
 
   #cpw-book-now .cpw-book-now-icon {
-    width: 17px;
-    height: 17px;
+    width: 21.25px;
+    height: 21.25px;
   }
 }
 
