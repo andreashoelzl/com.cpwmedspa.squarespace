@@ -249,6 +249,7 @@
   $(document).ready(function () {
     setRenderStatus("ready");
     //console.log("jquery ready")
+    createFloatingBookButton();
     $("a[href='#']")
       .filter(function () {
         return $(this).text() === "Procedures";
@@ -454,6 +455,32 @@
       document.head.appendChild(m);
     }
     m.setAttribute("content", state);
+  }
+  /**
+   * Floating "Book Now" call-to-action, shown on every page.
+   * Opens the Pabau online-bookings page in a new tab.
+   * Look & entrance animation live in styles.css (#cpw-book-now).
+   */
+  function createFloatingBookButton() {
+    if (document.getElementById("cpw-book-now")) return;
+    const link = document.createElement("a");
+    link.id = "cpw-book-now";
+    link.href =
+      "https://partner-us.pabau.com/online-bookings/central-park-west-vein-and-aesthetic-center";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute(
+      "aria-label",
+      "Book an appointment online (opens in a new tab)"
+    );
+    link.innerHTML =
+      '<svg class="cpw-book-now-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+      '<rect x="3.25" y="4.5" width="17.5" height="16.25" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/>' +
+      '<path d="M7 2.5v4M17 2.5v4M3.25 9.5h17.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' +
+      '<path d="m8.5 14.25 2.5 2.5 4.75-5.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>' +
+      "</svg>" +
+      '<span class="cpw-book-now-label">Book Now</span>';
+    document.body.appendChild(link);
   }
   function writeBannerTitle(breadcrumb, title, subtitle) {
     $("div#banner-area").append(
