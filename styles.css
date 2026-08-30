@@ -1256,14 +1256,14 @@ div.sqs-lightbox-padder>.sqs-lightbox-meta {
 
 #cpw-book-now:hover {
   color: #fff;
-  filter: brightness(.92);
+  filter: brightness(1.12);
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 8px 22px rgba(0, 0, 0, .28);
 }
 
 #cpw-book-now:focus-visible {
   color: #fff;
-  filter: brightness(.92);
+  filter: brightness(1.12);
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 8px 22px rgba(0, 0, 0, .28);
   outline: 3px solid var(--color-lightpink);
